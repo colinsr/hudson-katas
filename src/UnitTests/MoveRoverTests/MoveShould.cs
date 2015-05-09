@@ -10,6 +10,10 @@ namespace UnitTests.MoveRoverTests
         [Test]
         public void MoveRoverForwardOneUnit()
         {
+            //Obviously a lot of the initial logic will change, but in true TDD style,
+            //we will build from the most basic functionality up.
+            //Review the kata information document in the root folder to see
+            //what the goals are going to be.
             var rover = new Rover();
             
             //Refactor this (A new rover should probably be initialized at (0,0)
