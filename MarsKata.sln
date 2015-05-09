@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsKata", "src\MarsKata\MarsKata.csproj", "{AF5CCE40-9868-4645-9049-CAED37600459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "src\UnitTests\UnitTests.csproj", "{405E209C-6928-4E12-81FE-5E0E175E8209}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF5CCE40-9868-4645-9049-CAED37600459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5CCE40-9868-4645-9049-CAED37600459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5CCE40-9868-4645-9049-CAED37600459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5CCE40-9868-4645-9049-CAED37600459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{405E209C-6928-4E12-81FE-5E0E175E8209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{405E209C-6928-4E12-81FE-5E0E175E8209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{405E209C-6928-4E12-81FE-5E0E175E8209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{405E209C-6928-4E12-81FE-5E0E175E8209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
