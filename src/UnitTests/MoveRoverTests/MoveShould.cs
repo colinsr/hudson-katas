@@ -20,5 +20,15 @@ namespace UnitTests.MoveRoverTests
             roverMover.Move(rover);
             Assert.AreEqual(1, rover.XAxis);
         }
+
+        [Test]
+        public void MoveRoverForwardTwoUnits()
+        {
+            var rover = new Rover();
+
+            var roverMover = new RoverMover();
+            roverMover.Move(rover, 2);
+            Assert.AreEqual(2, rover.XAxis);
+        }
     }
 }

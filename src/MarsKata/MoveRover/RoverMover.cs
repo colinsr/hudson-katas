@@ -8,5 +8,10 @@ namespace MarsKata.MoveRover
         {
             rover.XAxis++;
         }
+
+        public void Move(Rover rover, int spacesToMove)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
