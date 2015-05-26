@@ -21,7 +21,7 @@ namespace UnitTests.MoveRoverTests
             rover.YAxis = 0;
 
             var roverMover = new RoverMover();
-            roverMover.Move();
+            roverMover.Move(rover);
             Assert.AreEqual(1, rover.XAxis);
         }
     }
