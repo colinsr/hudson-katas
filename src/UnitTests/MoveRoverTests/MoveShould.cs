@@ -15,10 +15,6 @@ namespace UnitTests.MoveRoverTests
             //Review the kata information document in the root folder to see
             //what the goals are going to be.
             var rover = new Rover();
-            
-            //Refactor this (A new rover should probably be initialized at (0,0)
-            rover.XAxis = 0;
-            rover.YAxis = 0;
 
             var roverMover = new RoverMover();
             roverMover.Move(rover);
