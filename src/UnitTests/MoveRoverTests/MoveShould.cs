@@ -7,6 +7,16 @@ namespace UnitTests.MoveRoverTests
     [TestFixture]
     public class MoveShould
     {
+        private Rover _rover;
+        private RoverMover _roverMover;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _rover = new Rover();
+            _roverMover = new RoverMover();
+        }
+
         [Test]
         public void MoveRoverForwardOneUnit()
         {
@@ -14,15 +24,15 @@ namespace UnitTests.MoveRoverTests
             //we will build from the most basic functionality up.
             //Review the kata information document in the root folder to see
             //what the goals are going to be.
-            var rover = new Rover();
-            
-            //Refactor this (A new rover should probably be initialized at (0,0)
-            rover.XAxis = 0;
-            rover.YAxis = 0;
+            _roverMover.Move(_rover);
+            Assert.AreEqual(1, _rover.XAxis);
+        }
 
-            var roverMover = new RoverMover();
-            roverMover.Move();
-            Assert.AreEqual(1, rover.XAxis);
+        [Test]
+        public void MoveRoverForwardTwoUnits()
+        {
+            _roverMover.Move(_rover, 2);
+            Assert.AreEqual(2, _rover.XAxis);
         }
     }
 }
