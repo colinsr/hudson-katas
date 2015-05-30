@@ -26,6 +26,11 @@ namespace MarsKata.MoveRover
 
         private void Move(Direction direction)
         {
+            if (direction == null)
+            {
+                return;
+            }
+
             if (direction.XAxis != 0)
             {
                 Rover.XAxis = Rover.XAxis + direction.XAxis;

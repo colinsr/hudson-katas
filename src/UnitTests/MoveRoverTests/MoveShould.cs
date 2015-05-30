@@ -44,5 +44,12 @@ namespace UnitTests.MoveRoverTests
             _roverMover.Execute(actions);
             Assert.AreEqual(2, _rover.XAxis);
         }
+
+        [Test]
+        public void MoveRoverBackwardOneUnits()
+        {
+            _roverMover.Execute(new Action());
+            Assert.AreEqual(-1, _rover.XAxis);
+        }
     }
 }
