@@ -1,4 +1,5 @@
-﻿using MarsKata;
+﻿using System.Collections.Generic;
+using MarsKata;
 using MarsKata.MoveRover;
 using NUnit.Framework;
 
@@ -14,7 +15,7 @@ namespace UnitTests.MoveRoverTests
         public void SetUp()
         {
             _rover = new Rover();
-            _roverMover = new RoverMover();
+            _roverMover = new RoverMover(_rover);
         }
 
         [Test]
@@ -24,14 +25,23 @@ namespace UnitTests.MoveRoverTests
             //we will build from the most basic functionality up.
             //Review the kata information document in the root folder to see
             //what the goals are going to be.
-            _roverMover.Move(_rover);
+
+            var direction = new Direction {XAxis = 1};
+            var action = new Action { Direction = direction };
+
+            _roverMover.Execute(action);
             Assert.AreEqual(1, _rover.XAxis);
         }
 
         [Test]
         public void MoveRoverForwardTwoUnits()
         {
-            _roverMover.Move(_rover, 2);
+            var direction = new Direction { XAxis = 1 };
+            var action = new Action { Direction = direction };
+
+            var actions = new List<Action> {action, action};
+
+            _roverMover.Execute(actions);
             Assert.AreEqual(2, _rover.XAxis);
         }
     }

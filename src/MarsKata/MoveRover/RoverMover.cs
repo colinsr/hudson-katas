@@ -1,19 +1,39 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace MarsKata.MoveRover
 {
     public class RoverMover
     {
-        public void Move(Rover rover)
+        private Rover Rover { get; set; }
+
+        public RoverMover(Rover rover)
         {
-            rover.XAxis++;
+            Rover = rover;
         }
 
-        public void Move(Rover rover, int spacesToMove)
+        public void Execute(IEnumerable<Action> actions)
         {
-            for (int moveCounter = 0; moveCounter < spacesToMove; moveCounter++)
+            foreach (var action in actions)
             {
-                rover.XAxis++;
+                Execute(action);
+            }
+        }
+
+        public void Execute(Action action)
+        {
+            Move(action.Direction);
+        }
+
+        private void Move(Direction direction)
+        {
+            if (direction.XAxis != 0)
+            {
+                Rover.XAxis = Rover.XAxis + direction.XAxis;
+            }
+
+            if (direction.YAxis != 0)
+            {
+                Rover.YAxis = Rover.YAxis + direction.YAxis;
             }
         }
     }
