@@ -27,7 +27,7 @@ namespace UnitTests.MoveRoverTests
             //what the goals are going to be.
 
             var direction = new Direction {XAxis = 1};
-            var action = new Action { Direction = direction };
+            var action = new Action { Direction = direction, UnitOfMovement = 1 };
 
             _roverMover.Execute(action);
             Assert.AreEqual(1, _rover.XAxis);
@@ -37,7 +37,7 @@ namespace UnitTests.MoveRoverTests
         public void MoveRoverForwardTwoUnits()
         {
             var direction = new Direction { XAxis = 1 };
-            var action = new Action { Direction = direction };
+            var action = new Action { Direction = direction, UnitOfMovement = 1 };
 
             var actions = new List<Action> {action, action};
 
@@ -49,11 +49,11 @@ namespace UnitTests.MoveRoverTests
         public void MoveRoverBackwardOneUnits()
         {
             var direction = new Direction { XAxis = -1 };
-            var action = new Action { Direction = direction };
+            var action = new Action { Direction = direction, UnitOfMovement = 1 };
 
-            var actions = new List<Action> { action, action };
+            var actions = new List<Action> { action };
 
-            _roverMover.Execute(action);
+            _roverMover.Execute(actions);
             Assert.AreEqual(-1, _rover.XAxis);
         }
     }
