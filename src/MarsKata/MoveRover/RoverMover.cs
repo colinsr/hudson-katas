@@ -21,19 +21,23 @@ namespace MarsKata.MoveRover
 
         public void Execute(Action action)
         {
-            Move(action.Direction);
+            Move(action.Direction, action.UnitOfMovement);
         }
 
-        private void Move(Direction direction)
+        private void Move(Direction direction, int unitOfMovement)
         {
             if (direction == null)
             {
                 return;
             }
 
-            if (direction.XAxis != 0)
+            if (direction.XAxis == 1)
             {
-                Rover.XAxis = Rover.XAxis + direction.XAxis;
+                Rover.XAxis = Rover.XAxis + unitOfMovement;
+            }
+            else if (direction.XAxis == -1)
+            {
+                Rover.XAxis = Rover.XAxis - unitOfMovement;
             }
 
             if (direction.YAxis != 0)

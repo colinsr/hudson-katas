@@ -56,5 +56,17 @@ namespace UnitTests.MoveRoverTests
             _roverMover.Execute(actions);
             Assert.AreEqual(-1, _rover.XAxis);
         }
+
+        [Test]
+        public void MoveRoverInTheNegativeXAxisPositionBy10Units_Therefore_XAxis_WillBeNegative10()
+        {
+            var direction = new Direction { XAxis = -1 };
+            var action = new Action { Direction = direction, UnitOfMovement = 1 };
+
+            var actions = new List<Action> { action };
+
+            _roverMover.Execute(actions);
+            Assert.AreEqual(-10, _rover.XAxis);
+        }
     }
 }
