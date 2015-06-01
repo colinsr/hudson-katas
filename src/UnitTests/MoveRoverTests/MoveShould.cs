@@ -48,7 +48,12 @@ namespace UnitTests.MoveRoverTests
         [Test]
         public void MoveRoverBackwardOneUnits()
         {
-            _roverMover.Execute(new Action());
+            var direction = new Direction { XAxis = -1 };
+            var action = new Action { Direction = direction };
+
+            var actions = new List<Action> { action, action };
+
+            _roverMover.Execute(action);
             Assert.AreEqual(-1, _rover.XAxis);
         }
     }
