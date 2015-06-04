@@ -2,7 +2,7 @@
 {
     public class Action
     {
-        public Direction Direction { get; set; }
+        public Orientation Orientation { get; set; }
         public int UnitOfMovement { get; set; }
     }
 }

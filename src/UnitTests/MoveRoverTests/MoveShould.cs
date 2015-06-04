@@ -14,7 +14,7 @@ namespace UnitTests.MoveRoverTests
         [SetUp]
         public void SetUp()
         {
-            _rover = new Rover();
+            _rover = new Rover { Orientation = Orientation.South };
             _roverMover = new RoverMover(_rover);
         }
 
@@ -26,42 +26,38 @@ namespace UnitTests.MoveRoverTests
             //Review the kata information document in the root folder to see
             //what the goals are going to be.
 
-            var direction = new Direction {XAxis = 1};
-            var action = new Action { Direction = direction, UnitOfMovement = 1 };
+            var action = new Action { Orientation = Orientation.North, UnitOfMovement = 1 };
 
             _roverMover.Execute(action);
-            Assert.AreEqual(1, _rover.XAxis);
+            Assert.AreEqual(1, _rover.YAxis);
         }
 
         [Test]
         public void MoveRoverForwardTwoUnits()
         {
-            var direction = new Direction { XAxis = 1 };
-            var action = new Action { Direction = direction, UnitOfMovement = 1 };
+            var action = new Action { Orientation = Orientation.North, UnitOfMovement = 1 };
 
             var actions = new List<Action> {action, action};
 
             _roverMover.Execute(actions);
-            Assert.AreEqual(2, _rover.XAxis);
+            Assert.AreEqual(2, _rover.YAxis);
         }
 
         [Test]
         public void MoveRoverBackwardOneUnits()
         {
-            var direction = new Direction { XAxis = -1 };
-            var action = new Action { Direction = direction, UnitOfMovement = 1 };
+            var action = new Action { Orientation = Orientation.North, UnitOfMovement = -1 };
 
             var actions = new List<Action> { action };
 
             _roverMover.Execute(actions);
-            Assert.AreEqual(-1, _rover.XAxis);
+            Assert.AreEqual(-1, _rover.YAxis);
         }
 
         [Test]
         public void MoveRoverInTheNegativeXAxisPositionBy10Units_Therefore_XAxis_WillBeNegative10()
         {
-            var direction = new Direction { XAxis = -1 };
-            var action = new Action { Direction = direction, UnitOfMovement = 1 };
+            var action = new Action { Orientation = Orientation.West, UnitOfMovement = 10 };
 
             var actions = new List<Action> { action };
 
