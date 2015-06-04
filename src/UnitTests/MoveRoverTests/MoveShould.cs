@@ -64,5 +64,18 @@ namespace UnitTests.MoveRoverTests
             _roverMover.Execute(actions);
             Assert.AreEqual(-10, _rover.XAxis);
         }
+
+        [Test]
+        public void ChangingRoverOrientation_UpdatesRoverOrientation()
+        {
+            var action = new Action { Orientation = Orientation.South, UnitOfMovement = 5 };
+
+            var nextAction = new Action {Orientation = Orientation.North, UnitOfMovement = 5};
+
+            var actions = new List<Action> { action, nextAction };
+
+            _roverMover.Execute(actions);
+            Assert.AreEqual(Orientation.North, _rover.Orientation);
+        }
     }
 }
