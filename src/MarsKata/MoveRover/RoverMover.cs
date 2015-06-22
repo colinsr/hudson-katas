@@ -26,6 +26,7 @@ namespace MarsKata.MoveRover
 
         private void Move(Orientation orientation, int unitOfMovement)
         {
+            Rover.Orientation = orientation;
             if (orientation == Orientation.North)
             {
                 Rover.YAxis = Rover.YAxis + unitOfMovement;
