@@ -29,20 +29,40 @@ namespace MarsKata.MoveRover
             Rover.Orientation = orientation;
             if (orientation == Orientation.North)
             {
-                Rover.YAxis = Rover.YAxis + unitOfMovement;
+                GoNorth(unitOfMovement);
             }
             else if (orientation == Orientation.South)
             {
-                Rover.YAxis = Rover.YAxis - unitOfMovement;
+                GoSouth(unitOfMovement);
+            }
+            else if (orientation == Orientation.East)
+            {
+                GoEast(unitOfMovement);
             }
             else if (orientation == Orientation.West)
             {
-                Rover.XAxis = Rover.XAxis - unitOfMovement;
+                GoWest(unitOfMovement);
             }
-            else
-            {
-                Rover.XAxis = Rover.XAxis + unitOfMovement;
-            }
+        }
+
+        private void GoNorth(int unitOfMovement)
+        {
+            Rover.YAxis = Rover.YAxis + unitOfMovement;
+        }
+
+        private void GoSouth(int unitOfMovement)
+        {
+            Rover.YAxis = Rover.YAxis - unitOfMovement;
+        }
+
+        private void GoEast(int unitOfMovement)
+        {
+            Rover.XAxis = Rover.XAxis + unitOfMovement;
+        }
+
+        private void GoWest(int unitOfMovement)
+        {
+            Rover.XAxis = Rover.XAxis - unitOfMovement;
         }
     }
 }
