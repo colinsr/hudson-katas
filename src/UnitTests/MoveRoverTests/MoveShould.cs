@@ -77,5 +77,14 @@ namespace UnitTests.MoveRoverTests
             _roverMover.Execute(actions);
             Assert.AreEqual(Orientation.North, _rover.Orientation);
         }
+
+        [Test]
+        public void ChangingRoverOrientationWithoutMovement_UpdatesRoverOrientation()
+        {
+            var action = new Action { Orientation = Orientation.East };
+
+            _roverMover.Execute(action);
+            Assert.AreEqual(Orientation.East, _rover.Orientation);
+        }
     }
 }
