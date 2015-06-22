@@ -86,5 +86,14 @@ namespace UnitTests.MoveRoverTests
             _roverMover.Execute(action);
             Assert.AreEqual(Orientation.East, _rover.Orientation);
         }
+
+        [Test]
+        public void MoveEastOneUnit_WhenMovingForward()
+        {
+            var action = new Action { Orientation = Orientation.East, Direction = Direction.Forward };
+
+            _roverMover.Execute(action);
+            Assert.AreEqual(1, _rover.XAxis);
+        }
     }
 }

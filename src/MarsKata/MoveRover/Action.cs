@@ -4,5 +4,6 @@
     {
         public Orientation Orientation { get; set; }
         public int UnitOfMovement { get; set; }
+        public Direction Direction { get; set; }
     }
 }

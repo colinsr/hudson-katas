@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MoveRover\Action.cs" />
+    <Compile Include="MoveRover\Direction.cs" />
     <Compile Include="MoveRover\Orientation.cs" />
     <Compile Include="MoveRover\RoverMover.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
